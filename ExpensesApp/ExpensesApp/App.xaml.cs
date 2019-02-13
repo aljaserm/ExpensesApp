@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ExpensesApp.Views;
+using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -7,11 +8,18 @@ namespace ExpensesApp
 {
     public partial class App : Application
     {
+        public static string DBPath;
         public App()
         {
             InitializeComponent();
+            MainPage = new NavigationPage(new MainPage());
+        }
 
-            MainPage = new MainPage();
+        public App(string dbPath)
+        {
+            InitializeComponent();
+            DBPath = dbPath;
+            MainPage = new NavigationPage(new MainPage());
         }
 
         protected override void OnStart()
