@@ -29,7 +29,7 @@
                     ItemsSource="{Binding Categories}"/>-->
 
 
-            <TableView>
+            <TableView x:Name="tblExpense">
                 <TableRoot>
                     <TableSection>
                         <EntryCell Label="Name" 

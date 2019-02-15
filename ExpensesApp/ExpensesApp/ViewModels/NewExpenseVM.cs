@@ -71,11 +71,18 @@ namespace ExpensesApp.ViewModels
             set;
         }
 
+        public ObservableCollection<ExpenseStatus> expenseStatuses
+        {
+            get;
+            set;
+        }
+
         public Command SaveExpensCommand { get; set; }
 
         public NewExpenseVM()
         {
             Categories = new ObservableCollection<string>();
+            expenseStatuses = new ObservableCollection<ExpenseStatus>();
             ExpenseDate = DateTime.Today;
             SaveExpensCommand = new Command(InsertExpense);
             GetCategories();
@@ -120,6 +127,31 @@ namespace ExpensesApp.ViewModels
             Categories.Add("Personal");
             Categories.Add("Travel");
             Categories.Add("Other");
+        }
+        public void getExpenseStatus()
+        {
+            expenseStatuses.Clear();
+            expenseStatuses.Add(new ExpenseStatus()
+            {
+                Name="ran",Status=true
+            });
+            expenseStatuses.Add(new ExpenseStatus()
+            {
+                Name = "man",
+                Status = true
+            });
+            expenseStatuses.Add(new ExpenseStatus()
+            {
+                Name = "tan",
+                Status = true
+            });
+        }
+        
+
+        public class ExpenseStatus
+        {
+            public string Name { get; set; }
+            public bool Status { get; set; }
         }
     }
 }
