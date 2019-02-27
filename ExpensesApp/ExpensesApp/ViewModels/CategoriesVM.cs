@@ -8,6 +8,7 @@ using ExpensesApp.Interfaces;
 using Xamarin.Forms;
 using PCLStorage;
 using System.IO;
+using ExpensesApp.Resources;
 
 namespace ExpensesApp.ViewModels
 {
@@ -52,13 +53,20 @@ namespace ExpensesApp.ViewModels
         private void GetCategories()
         {
             Categories.Clear();
-            Categories.Add("Housing");
-            Categories.Add("Debt");
-            Categories.Add("Health");
-            Categories.Add("Food");
-            Categories.Add("Personal");
-            Categories.Add("Travel");
-            Categories.Add("Other");
+            Categories.Add(AppResource.HousingCategory);
+            Categories.Add(AppResource.DebtCategory);
+            Categories.Add(AppResource.HealthCategory);
+            Categories.Add(AppResource.FoodCategory);
+            Categories.Add(AppResource.PersonalCategory);
+            Categories.Add(AppResource.TravelCategory);
+            Categories.Add(AppResource.OtherCategory);
+            //Categories.Add("Housing");
+            //Categories.Add("Debt");
+            //Categories.Add("Health");
+            //Categories.Add("Food");
+            //Categories.Add("Personal");
+            //Categories.Add("Travel");
+            //Categories.Add("Other");
         }
 
 

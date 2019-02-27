@@ -2,6 +2,7 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:vm="clr-namespace:ExpensesApp.ViewModels"
+             xmlns:tr="clr-namespace:ExpensesApp.Views"
              x:Class="ExpensesApp.Views.CategoriesPage">
 
     <ContentPage.Resources>
@@ -11,9 +12,12 @@
     </ContentPage.Resources>
 
     <ContentPage.ToolbarItems>
-        <ToolbarItem Text="Export"
+        <ToolbarItem x:Name="btnExport" Text="{tr:Translate Text=btnExport}"
                      Command="{Binding Source={StaticResource vm}, Path=ExportCommand}"/>
     </ContentPage.ToolbarItems>
+
+
+    
     
     <ContentPage.Content>
         <ListView ItemsSource="{Binding Source={StaticResource vm}, Path=categoryExpenses}">
